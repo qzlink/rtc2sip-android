@@ -660,10 +660,9 @@ public class AudioChatActivity extends AppCompatActivity
                         }
                     if (EnumKey.MsgTag.sip_ringing.toString().equals(msgtag)) { //响铃
                         isRinging = true;
-                        if (CONNECT_CODE.equals(mConnectCode)) {//住呼叫有彩铃的情况先接通进入房间号
-                            isConnected = true;
-                            checkPermissionAndInit();
-                        }
+                        isConnected = true;
+                        checkPermissionAndInit();
+                        connnectedCall();
                     } else if (EnumKey.MsgTag.sip_ringing_res.toString().equals(msgtag)) {//响铃回执
                     } else if (EnumKey.MsgTag.sip_connected.toString().equals(msgtag)) {//通话连接
                         if (!CONNECT_CODE.equals(mConnectCode)) {
