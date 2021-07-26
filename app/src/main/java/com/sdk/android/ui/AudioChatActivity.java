@@ -319,6 +319,10 @@ public class AudioChatActivity extends AppCompatActivity
 
     private void initAgoraEngine() {
         initializeAgoraEngine();
+         if (null != mRtcEngine) {
+            mRtcEngine.setChannelProfile(1);//
+            mRtcEngine.setClientRole(1);//
+        }
         if (null != mRtcEngine) {
             if (IMConstants.VIDEO.equals(mCallType)) {
                 setupVideoProfile();
